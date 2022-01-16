@@ -4,7 +4,7 @@
 <div class="overview-boxes">
     <div class="box">
         <div class="right-side">
-            <h5>Categories Page</h5>
+            <h5>Products Page</h5>
         </div>
     </div>
 </div>

@@ -26,8 +26,12 @@ Route::get('/category/{name}/{id}', [FrontendFrontendController::class, 'product
 
 Auth::routes();
 
-Route::middleware(['auth'])->group(function(){
-    Route::post('add-to-cart', [CartController::class, 'addProduct']);
+Route::post('add-to-cart', [CartController::class, 'addProduct']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('cart', [CartController::class, 'viewcart']);
+    Route::get('delete-cart/{id}', [CartController::class, 'destroy']);
+    Route::get('checkout', [CartController::class, 'confirm']);
+    Route::get('delall', [CartController::class, 'dellAll']);
 });
 
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {
@@ -48,7 +52,4 @@ Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     Route::post('update-product/{id}', [ProductController::class, 'update']);
     Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
 
-
-
 });
-

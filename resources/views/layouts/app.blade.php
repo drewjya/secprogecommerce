@@ -68,7 +68,7 @@
                 </div>
             @else
                 <div id="ig" class="sosmed">
-                    <a href="/cart"><img src="{{ asset('asset/image/shhopping-cart.png') }}" alt=""></a>
+                    <a href="{{url('cart')}}"><img src="{{ asset('asset/image/shhopping-cart.png') }}" alt=""></a>
                 </div>
                 <div class="dropdown">
                     <button class="dropbtn-ac">My Account </button>
@@ -119,7 +119,7 @@
             </div>
         </div>
     </footer>
-   
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @if (session('status'))
         <script>

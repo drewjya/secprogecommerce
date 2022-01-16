@@ -29,14 +29,14 @@ class CategoriesController extends Controller
             $file->move('asset/uploads/categories/', $filename);
             $category->image = $filename;
         }
-        $category->name = $request->input('name');
-        $category->slug = $request->input('slug');
-        $category->description = $request->input('description');
-        $category->status = $request->input('status') == TRUE ? 1 : 0;
-        $category->popular = $request->input('popular') == TRUE ? 1 : 0;
-        $category->meta_title = $request->input('meta_title');
-        $category->meta_descrip = $request->input('meta_descrip');
-        $category->meta_keywords = $request->input('meta_keywords');
+        $category->name = strip_tags($request->input('name'));
+        $category->slug = strip_tags($request->input('slug'));
+        $category->description = strip_tags($request->input('description'));
+        $category->status = strip_tags($request->input('status') == TRUE ? 1 : 0);
+        $category->popular = strip_tags($request->input('popular') == TRUE ? 1 : 0);
+        $category->meta_title = strip_tags($request->input('meta_title'));
+        $category->meta_descrip = strip_tags($request->input('meta_descrip'));
+        $category->meta_keywords = strip_tags($request->input('meta_keywords'));
         $category->save();
         return redirect('/dashboard')->with('status', 'Category added succesfully');
     }
@@ -60,14 +60,14 @@ class CategoriesController extends Controller
             $file->move('asset/uploads/categories/', $filename);
             $category->image = $filename;
         }
-        $category->name = $request->input('name');
-        $category->slug = $request->input('slug');
-        $category->description = $request->input('description');
-        $category->status = $request->input('status') == TRUE ? 1 : 0;
-        $category->popular = $request->input('popular') == TRUE ? 1 : 0;
-        $category->meta_title = $request->input('meta_title');
-        $category->meta_descrip = $request->input('meta_descrip');
-        $category->meta_keywords = $request->input('meta_keywords');
+        $category->name = strip_tags($request->input('name'));
+        $category->slug = strip_tags($request->input('slug'));
+        $category->description = strip_tags($request->input('description'));
+        $category->status = strip_tags($request->input('status') == TRUE ? 1 : 0);
+        $category->popular = strip_tags($request->input('popular') == TRUE ? 1 : 0);
+        $category->meta_title = strip_tags($request->input('meta_title'));
+        $category->meta_descrip = strip_tags($request->input('meta_descrip'));
+        $category->meta_keywords = strip_tags($request->input('meta_keywords'));
 
         $category->update();
         return redirect('dashboard')->with('status', 'Category updated successfully');

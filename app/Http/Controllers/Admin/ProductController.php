@@ -30,20 +30,20 @@ class ProductController extends Controller
             $file->move('asset/uploads/products/', $filename);
             $product->image = $filename;
         }
-        $product->name = $request->input('name');
-        $product->cate_id = $request->input('cate_id');
-        $product->small_descriptions = $request->input('small_descriptions');
-        $product->original_price = $request->input('original_price');
-        $product->selling_price = $request->input('selling_price');
-        $product->tax = $request->input('tax');
-        $product->quantity = $request->input('quantity');
-        $product->slug = $request->input('slug');
-        $product->descriptions = $request->input('descriptions');
-        $product->status = $request->input('status') == TRUE ? 1 : 0;
-        $product->trending = $request->input('trending') == TRUE ? 1 : 0;
-        $product->meta_title = $request->input('meta_title');
-        $product->meta_descriptions = $request->input('meta_descriptions');
-        $product->meta_keywords = $request->input('meta_keywords');
+        $product->name = strip_tags($request->input('name'));
+        $product->cate_id = strip_tags($request->input('cate_id'));
+        $product->small_descriptions = strip_tags($request->input('small_descriptions'));
+        $product->original_price = strip_tags($request->input('original_price'));
+        $product->selling_price = strip_tags($request->input('selling_price'));
+        $product->tax = strip_tags($request->input('tax'));
+        $product->quantity = strip_tags($request->input('quantity'));
+        $product->slug = strip_tags($request->input('slug'));
+        $product->descriptions = strip_tags($request->input('descriptions'));
+        $product->status = strip_tags($request->input('status') == TRUE ? 1 : 0);
+        $product->trending = strip_tags($request->input('trending') == TRUE ? 1 : 0);
+        $product->meta_title = strip_tags($request->input('meta_title'));
+        $product->meta_descriptions = strip_tags($request->input('meta_descriptions'));
+        $product->meta_keywords = strip_tags($request->input('meta_keywords'));
         $product->save();
         return redirect('products')->with('status', "Product Added Successfully");
     }
@@ -69,20 +69,20 @@ class ProductController extends Controller
             $product->image = $filename;
         }
 
-        $product->name = $request->input('name');
-        $product->cate_id = $request->input('cate_id');
-        $product->small_descriptions = $request->input('small_descriptions');
-        $product->original_price = $request->input('original_price');
-        $product->selling_price = $request->input('selling_price');
-        $product->tax = $request->input('tax');
-        $product->quantity = $request->input('quantity');
-        $product->slug = $request->input('slug');
-        $product->descriptions = $request->input('descriptions');
-        $product->status = $request->input('status') == TRUE ? 1 : 0;
-        $product->trending = $request->input('trending') == TRUE ? 1 : 0;
-        $product->meta_title = $request->input('meta_title');
-        $product->meta_descriptions = $request->input('meta_descriptions');
-        $product->meta_keywords = $request->input('meta_keywords');
+        $product->name = strip_tags($request->input('name'));
+        $product->cate_id = strip_tags($request->input('cate_id'));
+        $product->small_descriptions = strip_tags($request->input('small_descriptions'));
+        $product->original_price = strip_tags($request->input('original_price'));
+        $product->selling_price = strip_tags($request->input('selling_price'));
+        $product->tax = strip_tags($request->input('tax'));
+        $product->quantity = strip_tags($request->input('quantity'));
+        $product->slug = strip_tags($request->input('slug'));
+        $product->descriptions = strip_tags($request->input('descriptions'));
+        $product->status = strip_tags($request->input('status') == TRUE ? 1 : 0);
+        $product->trending = strip_tags($request->input('trending') == TRUE ? 1 : 0);
+        $product->meta_title = strip_tags($request->input('meta_title'));
+        $product->meta_descriptions = strip_tags($request->input('meta_descriptions'));
+        $product->meta_keywords = strip_tags($request->input('meta_keywords'));
         $product->update();
         return redirect('products')->with('status', "Product Updated Successfully");
     }
