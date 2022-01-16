@@ -27,9 +27,9 @@
             <label for="descriptions">Descriptions</label><br>
             <textarea name="descriptions" rows="5">{{ $product->descriptions }}</textarea><br>
             <label for="status">Status</label>
-            <input type="checkbox" name="status"{{ $product->status == 0 ? 'checked' : '' }}  id="status"><br>
+            <input type="checkbox" name="status"{{ $product->status == 1 ? 'checked' : '' }}  id="status"><br>
             <label for="trending">Trending</label>
-            <input type="checkbox" {{ $product->trending == 0 ? 'checked' : '' }}  name="trending" id="trending">
+            <input type="checkbox" {{ $product->trending == 1 ? 'checked' : '' }}  name="trending" id="trending">
             <br>
             <br>
             <label for="original_price">Original Price</label>

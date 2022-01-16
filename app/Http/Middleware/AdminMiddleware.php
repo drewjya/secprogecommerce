@@ -21,10 +21,10 @@ class AdminMiddleware
             if (Auth::user()->role_as === 1) {
                 return $next($request);
             } else{
-                return redirect('/home')->with("status", "Access Denied! You are not an admin");
+                return redirect('/');
             }
         }else{
-            return  redirect('/home')->with("status", "Please Login First");
+            return  redirect('/')->with("status", "Please Login First");
         }
     }
 }

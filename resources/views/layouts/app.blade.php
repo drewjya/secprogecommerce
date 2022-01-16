@@ -22,6 +22,8 @@
     <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/login.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/signup.css') }}" rel="stylesheet">
+    <link href="{{ asset('asset/css/custom.css') }}" rel="stylesheet">
+
 
 
 </head>
@@ -36,18 +38,19 @@
             </div>
             <div id="logo">
                 <input type="text" placeholder="Search..">
-                <a href="#"><img src="{{ asset('asset/image/search.png') }}" alt=""></a>
-                <div class="dropdown">
-                    <button class="dropbtn">Categories</button>
-                    <div class="dropdown-content">
-                        <a href="./Categorie_Shirt.html">Shirt</a>
-                        <a href="./Categorie_Others.html">Others</a>
-                    </div>
-                </div>
+                <a href="#" class="item-link"><img src="{{ asset('asset/image/search.png') }}" alt=""></a>
             </div>
-            <div id="socialmedia">
-                @guest
+
+            <div class="dropdown">
+                <button class="dropbtn"><a href="{{ url('category') }}">Categories</a></button>
+
+
+            </div>
+
+            @guest
+                <div id="socialmedia">
                     @if (Route::has('login'))
+
                         <div class="namaakun">
                             <a class="namamenu" href="{{ route('login') }}">
                                 <p>{{ __('Login') }}</p>
@@ -62,35 +65,61 @@
                             </a>
                         </div>
                     @endif
-                @else
-                    <div id="ig" class="sosmed">
-                        <a href="/cart"><img src="{{ asset('asset/image/shhopping-cart.png') }}" alt=""></a>
-                    </div>
-                    <div class="dropdown">
-                        <button class="dropbtn-ac">My Account </button>
-                        <div class="dropdown-content">
-                            <a href="./Categorie_Shirt.html"> {{ Auth::user()->name }}</a>
-                            <div class="menu">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                  document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
+                </div>
+            @else
+                <div id="ig" class="sosmed">
+                    <a href="/cart"><img src="{{ asset('asset/image/shhopping-cart.png') }}" alt=""></a>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn-ac">My Account </button>
+                    <div class="dropdown-content">
+                        <a href="./Categorie_Shirt.html"> {{ Auth::user()->name }}</a>
+                        <div class="menu">
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                          document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </div>
                     </div>
-                @endguest
-            </div>
+                </div>
+            @endguest
+
         </div>
 
         <main>
+            @yield('slideshow')
+            <div class="title-content">
+                <p>
+                    @yield('title')
+
+                </p>
+            </div>
             @yield('content')
         </main>
+
     </div>
+    <footer>
+        <div class="footer">
+            <div id="logofooter">
+                <img src="{{ asset('asset/image/head.png') }}" alt="">
+            </div>
+            <div id="copyright">
+                &copy; 2021 E-commerce
+            </div>
+            <div class="menufooter">
+                <div class="menufoot">
+                    <a href="./about.html">ABOUT</a>
+                </div>
+                <div class="menufoot">
+                    <a href="./terms.html">Terms & Condition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+   
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @if (session('status'))
         <script>
@@ -98,6 +127,7 @@
         </script>
     @endif
     @yield('scripts')
+
 </body>
 
 </html>

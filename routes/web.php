@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\FrontEndController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\FrontendController as FrontendFrontendController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,13 +19,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontendFrontendController::class, 'index']);
+Route::get('/category', [FrontendFrontendController::class, 'categories']);
+Route::get('/category/{id}', [FrontendFrontendController::class, 'viewcategory']);
+Route::get('/category/{name}/{id}', [FrontendFrontendController::class, 'productview']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function(){
+    Route::post('add-to-cart', [CartController::class, 'addProduct']);
+});
 
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     //**CATEGORIES RELATED ROUTES */

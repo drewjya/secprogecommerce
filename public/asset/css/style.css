@@ -5,7 +5,7 @@ body {
 }
 
 .header {
-    height: 130px;
+    height: 80px;
     background-color: #ffffff;
     display: flex;
     align-items: center;
@@ -25,7 +25,7 @@ body {
 .namamenu h1 {
     padding-top: 5px;
     font-size: 15pt;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     /* font-weight: bold; */
     color: black;
     margin: 0 20px 0;
@@ -34,13 +34,13 @@ body {
 .namaakun p {
     padding-top: 5px;
     font-size: 15pt;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     /* font-weight: bold; */
     color: black;
     margin: 0 20px 0;
     padding: 10px;
     border-radius: 20%;
-    background-color: #FEF5ED;
+    background-color: #fef5ed;
 }
 
 .bagianatas {
@@ -68,6 +68,8 @@ body {
 
 #logo {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #src {
@@ -79,13 +81,17 @@ body {
     /* padding: 10px; */
 }
 
-#logo img {
-    padding-top: 15px;
-    height: 20px;
-    padding-right: 40px;
+#logo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#logo input[type=text] {
+#logo img {
+    height: 20px;
+}
+
+#logo input[type="text"] {
     padding: 6px;
     margin-top: 8px;
     margin-right: 16px;
@@ -99,14 +105,14 @@ body {
 }
 
 .bagianatas img {
-    object-fit: fill;
+    object-fit: contain;
 }
 
 #project h2 {
     position: relative;
     top: 50%;
     font-size: 30pt;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: darkred;
 }
 
@@ -114,13 +120,13 @@ body {
     position: relative;
     top: 50%;
     font-size: 30pt;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: darkred;
 }
 
 .bagianbawah {
     padding: 25px 0px;
-    background-color: #FEF5ED;
+    background-color: #fef5ed;
 }
 
 #project {
@@ -151,26 +157,27 @@ body {
 .gambarsan img {
     height: 300px;
     width: 300px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .isitext {
     text-align: center;
     margin-top: 20px;
+    columns: black;
     /* position:fixed;
     z-index: -1; */
 }
 
 .isitext h3 {
     font-size: 16pt;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     line-height: 0pt;
 }
 
 .isitext p {
     font-size: 16pt;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 100;
 }
 
@@ -203,14 +210,14 @@ body {
 
 #copyright {
     font-size: 18pt;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
 }
 
 .menufoot {
     margin: 0 20px 0;
     font-size: 18pt;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
 }
 
@@ -266,7 +273,7 @@ body {
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1
+    background-color: #f1f1f1;
 }
 
 .dropdown:hover .dropdown-content {
@@ -281,4 +288,22 @@ body {
     font-size: 20pt;
     margin-left: 300px;
     margin-right: 300px;
+}
+
+.title-content {
+    margin-left: 100px;
+}
+
+.title-content p {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.dropbtn a {
+    color: white;
 }

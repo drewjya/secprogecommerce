@@ -16,9 +16,9 @@
             <label for="description">Description</label><br>
             <textarea name="description" rows="5">{{ $category->description }}</textarea><br>
             <label for="status">Status</label>
-            <input type="checkbox" name="status" {{ $category->status == 0 ? 'checked' : '' }} id="status"><br>
+            <input type="checkbox" name="status" {{ $category->status == 1 ? 'checked' : '' }} id="status"><br>
             <label for="popular">Popular</label>
-            <input type="checkbox" {{ $category->popular == 0 ? 'checked' : '' }} name="popular" id="popular"><br><br>
+            <input type="checkbox" {{ $category->popular == 1 ? 'checked' : '' }} name="popular" id="popular"><br><br>
 
             <label for="meta_title">Meta Title</label><br>
             <input type="text" value="{{ $category->meta_title }}" name="meta_title"><br><br>
