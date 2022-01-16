@@ -1,0 +1,94 @@
+#content {
+    padding: 50px 0px;
+    width: 70vw;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 320px;
+    margin-right: 120px;
+}
+
+#illustration img {
+    padding-left: 70px;
+    width: 85%;
+}
+
+#illustration h1 {
+    color: #2c2c2c;
+    font-size: 23px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-weight: 600;
+}
+
+#illustration h2 {
+    color: #2c2c2c;
+    font-size: 17px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-weight: 300;
+}
+
+.boxsignin {
+    height: auto;
+    background-color: #ffffff;
+    padding: 50px 24px 50px;
+    border-radius: 5px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 3px 30px #cccccc;
+}
+
+.form h1 {
+    text-align: center;
+    padding-top: 0px;
+    font-size: 33px;
+    font-family: 'Open Sans', sans-serif;
+    color: #4e4e4e;
+    padding-bottom: 50px;
+}
+
+.form label {
+    text-align: left;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.form input[type=text],
+[type=email],
+[type=password] {
+    height: 22px;
+    width: 292px;
+    padding: 8px 12px 8px;
+    font-size: 15pt;
+    border-radius: 3px;
+    background-color: #ffffff;
+    font-size: 13px;
+    display: flex;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cccccc;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.form button {
+    width: 318px;
+    height: 48px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #F50057;
+    border-radius: 10px;
+    border-width: 0ch;
+}
+
+.form h3 {
+    text-align: center;
+    padding-top: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #4e4e4e;
+    padding-top: 50px;
+}

@@ -1,0 +1,284 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
+
+.header {
+    height: 130px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 80px 0;
+}
+
+#socialmedia {
+    display: flex;
+    /* margin: 0 40px  */
+}
+
+#navbar {
+    display: flex;
+}
+
+.namamenu h1 {
+    padding-top: 5px;
+    font-size: 15pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-weight: bold; */
+    color: black;
+    margin: 0 20px 0;
+}
+
+.namaakun p {
+    padding-top: 5px;
+    font-size: 15pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-weight: bold; */
+    color: black;
+    margin: 0 20px 0;
+    padding: 10px;
+    border-radius: 20%;
+    background-color: #FEF5ED;
+}
+
+.bagianatas {
+    overflow: hidden;
+}
+
+.namamenu a {
+    text-decoration: none;
+    color: white;
+}
+
+.namaakun {
+    text-align: center;
+}
+
+.namaakun a {
+    text-decoration: none;
+    color: white;
+}
+
+.sosmed img {
+    height: 40px;
+    margin: 0 20px 0;
+}
+
+#logo {
+    display: flex;
+}
+
+#src {
+    display: flex;
+}
+
+#src img {
+    height: 40px;
+    /* padding: 10px; */
+}
+
+#logo img {
+    padding-top: 15px;
+    height: 20px;
+    padding-right: 40px;
+}
+
+#logo input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    /* border: none; */
+    font-size: 17px;
+    width: 300px;
+}
+
+.bagianatas {
+    height: 60vh;
+}
+
+.bagianatas img {
+    object-fit: fill;
+}
+
+#project h2 {
+    position: relative;
+    top: 50%;
+    font-size: 30pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: darkred;
+}
+
+#projectab h2 {
+    position: relative;
+    top: 50%;
+    font-size: 30pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: darkred;
+}
+
+.bagianbawah {
+    padding: 25px 0px;
+    background-color: #FEF5ED;
+}
+
+#project {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+#projectab {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+#gambarproduct {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.gambar1 {
+    margin-bottom: 60px;
+    /* align-items: center; */
+}
+
+.gambarsan {
+    display: flex;
+    justify-content: center;
+}
+
+.gambarsan img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.isitext {
+    text-align: center;
+    margin-top: 20px;
+    /* position:fixed;
+    z-index: -1; */
+}
+
+.isitext h3 {
+    font-size: 16pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    line-height: 0pt;
+}
+
+.isitext p {
+    font-size: 16pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+}
+
+.cert {
+    display: flex;
+    justify-content: center;
+}
+
+.iconlogo img {
+    margin-top: 100px;
+    height: 250px;
+}
+
+.footer {
+    height: 100px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#logofooter img {
+    height: 50px;
+}
+
+.menufooter {
+    display: flex;
+    justify-content: space-around;
+}
+
+#copyright {
+    font-size: 18pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.menufoot {
+    margin: 0 20px 0;
+    font-size: 18pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+.menufoot a {
+    text-decoration: none;
+    color: black;
+}
+
+.dropbtn {
+    margin-top: 5px;
+    background-color: #f02648;
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn-ac {
+    margin-top: 5px;
+    background-color: #bf253e;
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+.dropbtn img {
+    max-height: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #f02648;
+}
+
+#projectab p {
+    font-size: 20pt;
+    margin-left: 300px;
+    margin-right: 300px;
+}

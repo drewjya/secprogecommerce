@@ -1,0 +1,70 @@
+#project-profile h2 {
+    position: relative;
+    top: 50%;
+    font-size: 30pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: darkred;
+}
+
+.bagianbawah-profile {
+    padding-top: 50px;
+    height: 800px;
+    background-color: #FEF5ED;
+}
+
+#project-profile {
+    text-align: center;
+    /* margin-top: 100px; */
+    margin-bottom: 80px;
+}
+
+#project-profile p {
+    font-size: 20pt;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+#gambarproduct-profile {
+    display: flex;
+    justify-content: space-around;
+}
+
+.gambar1-profile {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 60px;
+    text-align: center;
+    height: 400px;
+    width: 500px;
+    background-color: #D3E4CD;
+    border-radius: 8px;
+}
+
+.gambarsan-profile img {
+    height: 200px;
+}
+
+.isititle-profile {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.isitext-profile h3 {
+    padding-top: 20px;
+}
+
+.isitext-profile {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.isitext-profile h3 {
+    font-size: 16pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    line-height: 0pt;
+}
+
+.isitext-profile p {
+    font-size: 16pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+}
