@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 
 class CategoriesController extends Controller
 {
@@ -54,7 +55,11 @@ class CategoriesController extends Controller
             if (File::exists($path)) {
                 File::delete($path);
             }
+
             $file = $request->file('image');
+            $validator = Validator::make($request->all(), [
+                'file' => 'max:10240',
+            ]);
             $ext = $file->getClientOriginalExtension();
             $filename = time() . '.' . $ext;
             $file->move('asset/uploads/categories/', $filename);
