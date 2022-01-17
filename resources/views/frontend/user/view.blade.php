@@ -5,20 +5,35 @@
 @endsection
 
 @section('content')
-   
-    <h3>Name : {{ $order->name }}</h3>
+
+
     <table class="table" style="width:80%; margin:100px auto ;">
         <thead>
             <tr class="head">
-
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Image</th>
             </tr>
         </thead>
-        {{-- @foreach ($order as $data)
+        @foreach ($order->orderItems as $data)
             <tbody>
                 <tr class="body">
+                    <td>{{ $data->product->name }}</td>
+                    <td>{{ $data->qty }}</td>
+                    <td>{{ $data->price * $data->qty }}</td>
+                    <td><img src="{{ asset('asset/uploads/products/' . $data->product->image) }}" alt=""></td>
 
                 </tr>
             </tbody>
-        @endforeach --}}
+        @endforeach
+        <thead>
+            <tr class="head">
+                <th></th>
+                <th></th>
+                <th>Grand Total : {{ $order->total_price }}</th>
+                <th></th>
+            </tr>
+        </thead>
     </table>
 @endsection
