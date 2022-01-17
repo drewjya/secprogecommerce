@@ -21,20 +21,27 @@
 </head>
 
 <body>
-    @include('layouts.inc.sidebar')
-    <section class="home-section">
-        @include('layouts.inc.navbar')
+    @if (Auth::user()->role_as === 1)
+        @include('layouts.inc.sidebar')
 
-        <div class="home-content">
-            @yield('content')
-        </div>
-    </section>
-   
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    @if (session('status'))
-    <script>swal("{{session('status')}}")</script>
+        <section class="home-section">
+            @include('layouts.inc.navbar')
+
+            <div class="home-content">
+                @yield('content')
+            </div>
+        </section>
+
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        @if (session('status'))
+            <script>
+                swal("{{ session('status') }}")
+            </script>
+        @endif
+        @yield('scripts')
+    @else
+    
     @endif
-    @yield('scripts')
 </body>
 
 </html>

@@ -16,9 +16,10 @@ class CheckoutController extends Controller
     public function index()
     {
         $old = Cart::where('user_id', Auth::id())->get();
+        // $item->prod_qty <= $item->product->quantity
         foreach ($old as $item) {
-            if (Product::where('id', $item->prod_id)->where('quantity', '<', $item->prod_qty)->exists()) {
-                $removeitem = Cart::where('user_id', Auth::id())->where('prod_id', $item->prod_id)->first();
+            if ($item->prod_qty > $item->product->quantity) {
+                $removeitem = Cart::where('id', $item->id)->first();
                 $removeitem->delete();
             }
         }

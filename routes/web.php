@@ -34,11 +34,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('checkout', [CheckoutController::class, 'index']);
     Route::get('delall', [CartController::class, 'dellAll']);
     Route::post('place-order', [CheckoutController::class, 'order']);
+    Route::get('/dashboard', [FrontEndController::class, 'index']);
 });
 
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     //**CATEGORIES RELATED ROUTES */
-    Route::get('/dashboard', [FrontEndController::class, 'index']);
     Route::get('categories', [CategoriesController::class, 'index']);
     Route::get('add-category', [CategoriesController::class, 'add']);
     Route::post('insert-category', [CategoriesController::class, 'insert']);
@@ -53,5 +53,4 @@ Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     Route::get('edit-product/{id}', [ProductController::class, 'edit']);
     Route::post('update-product/{id}', [ProductController::class, 'update']);
     Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
-
 });

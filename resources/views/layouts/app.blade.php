@@ -73,7 +73,7 @@
                 <div class="dropdown">
                     <button class="dropbtn-ac">My Account </button>
                     <div class="dropdown-content">
-                        <a href="./Categorie_Shirt.html"> {{ Auth::user()->name }}</a>
+                        <a href="{{url('dashboard')}}"> {{ Auth::user()->name }}</a>
                         <div class="menu">
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                           document.getElementById('logout-form').submit();">
@@ -111,10 +111,10 @@
             </div>
             <div class="menufooter">
                 <div class="menufoot">
-                    <a href="./about.html">ABOUT</a>
+                    <a href="#">ABOUT</a>
                 </div>
                 <div class="menufoot">
-                    <a href="./terms.html">Terms & Condition</a>
+                    <a href="#">Terms & Condition</a>
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@
         <div class="dropdown">
             <button class="dropbtn-ac">My Account </button>
             <div class="dropdown-content">
-                <a href="./Categorie_Shirt.html"> {{ Auth::user()->name }}</a>
+                <a href="#"> {{ Auth::user()->name }}</a>
                 <div class="menu">
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();">

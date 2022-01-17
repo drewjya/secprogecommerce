@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.dash')
 
 @section('content')
     <div class="overview-boxes">
