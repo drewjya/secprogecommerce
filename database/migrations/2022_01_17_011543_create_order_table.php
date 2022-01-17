@@ -15,8 +15,10 @@ class CreateOrderTable extends Migration
     {
         Schema::create('order', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id');
+            $table->string(('total_price'));
             $table->string('name');
-            $table->string('address');
+            $table->longText('address');
             $table->string('track_no');
             $table->timestamps();
         });

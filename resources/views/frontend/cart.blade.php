@@ -7,22 +7,22 @@
             <div class="bag-atas">
                 @php
                     $total = 0;
-                    $itemL = 0;
+
                     $status = false;
                     foreach ($cartitems as $item) {
                         if ($item->prod_qty <= $item->product->quantity) {
-                            $itemL++;
+
                             $total += $item->prod_qty * $item->product->selling_price;
                         }
                     }
                 @endphp
 
-                @if ($itemL > 0)
+                @if (count($cartitems)>0)
 
                     <a href="{{ url('delall') }}" class="Action">Remove all</a>
                 @endif
             </div>
-            @if ($itemL > 0)
+            @if (count($cartitems))
 
 
                 <div class="tampung">
@@ -66,11 +66,11 @@
                     <div class="checkout">
                         <div class="total">
                             <div class="Subtotal">Sub-Total</div>
-                            <div class="items">{{ $itemL }} items</div>
+                            <div class="items">{{ count($cartitems) }} items</div>
 
                             <div class="total-amount">Rp {{ $total }}</div>
                         </div>
-                        @if ($itemL > 0)
+                        @if (count($cartitems))
 
                             <a href="{{ url('checkout') }}"><button class="button">Checkout</button></a>
                         @endif

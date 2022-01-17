@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FrontendController as FrontendFrontendController;
+use App\Http\Controllers\Frontend\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -34,11 +35,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('checkout', [CheckoutController::class, 'index']);
     Route::get('delall', [CartController::class, 'dellAll']);
     Route::post('place-order', [CheckoutController::class, 'order']);
-    Route::get('/dashboard', [FrontEndController::class, 'index']);
+    Route::get('usr-dashboard', [UserController::class, 'index']);
+    Route::get('view-order/{id}', [UserController::class, 'view']);
 });
 
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     //**CATEGORIES RELATED ROUTES */
+    Route::get('/dashboard', [FrontEndController::class, 'index']);
     Route::get('categories', [CategoriesController::class, 'index']);
     Route::get('add-category', [CategoriesController::class, 'add']);
     Route::post('insert-category', [CategoriesController::class, 'insert']);
@@ -53,4 +56,5 @@ Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     Route::get('edit-product/{id}', [ProductController::class, 'edit']);
     Route::post('update-product/{id}', [ProductController::class, 'update']);
     Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
+
 });

@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-
+    <link href="{{ asset('asset/css/dashboard/style.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/login.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/signup.css') }}" rel="stylesheet">
@@ -68,15 +68,19 @@
                 </div>
             @else
                 <div id="ig" class="sosmed">
-                    <a href="{{url('cart')}}"><img src="{{ asset('asset/image/shhopping-cart.png') }}" alt=""></a>
+                    <a href="{{ url('cart') }}"><img src="{{ asset('asset/image/shhopping-cart.png') }}" alt=""></a>
                 </div>
                 <div class="dropdown">
                     <button class="dropbtn-ac">My Account </button>
                     <div class="dropdown-content">
-                        <a href="{{url('dashboard')}}"> {{ Auth::user()->name }}</a>
+                        @if (Auth::user()->role_as === 1)
+                            <a href="{{ url('dashboard') }}"> {{ Auth::user()->name }}</a>
+                            @else
+                            <a href="{{ url('usr-dashboard') }}"> {{ Auth::user()->name }}</a>
+                        @endif
                         <div class="menu">
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                          document.getElementById('logout-form').submit();">
+                                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 
 class CheckoutController extends Controller
 {
@@ -31,27 +32,36 @@ class CheckoutController extends Controller
     {
         $order = new Order();
         $order->name = Auth::user()->name;
-        $order->address = $request->input('address');
+        $order->user_id = Auth::id();
+        $order->address = Crypt::encrypt(strip_tags($request->input('address')));;
         $order->track_no = 'ecom' . rand(1111, 9999);
+        $total = 0;
+        $order->total_price = $total;
         $order->save();
 
-
         $cartitems = Cart::where('user_id', Auth::id())->get();
+
         foreach ($cartitems as $item) {
             $order_item = new OrderItem();
             $order_item->order_id = $order->id;
             $order_item->prod_id = $item->prod_id;
             $order_item->qty = $item->prod_qty;
             $order_item->price = $item->product->selling_price;
+            $total += $item->prod_qty * $item->product->selling_price;
             $order_item->save();
+            $prod = Product::where('id', $item->prod_id)->first();
+            $prod->quantity = $prod->quantity - $item->prod_qty;
+            $prod->update();
             $item->delete();
         }
-        if (Auth::user()->address==NULL) {
+        $order->total_price = $total;
+        $order->save();
+        if (Auth::user()->address == NULL) {
             $user = User::where('id', Auth::id())->first();
-            $user->address = $request->input('address');
+            $user->address = Crypt::encrypt(strip_tags($request->input('address')));
             $user->update();
-
         }
+
 
         return redirect('/')->with('status', 'Order placed successfully');
     }
