@@ -1,16 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="overview-boxes">
-        <div class="box">
+<div class="box">
 
-                <h3>Dashboard Page
+    <h3>Dashboard Page</h3>
 
-                </h3>
-
-            
-        </div>
-    </div>
+</div>
 @endsection
 {{-- <div class="box">
         <div class="right-side">
