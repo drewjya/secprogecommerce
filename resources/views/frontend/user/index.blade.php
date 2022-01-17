@@ -25,7 +25,7 @@
                     <td>{{ $order->track_no }}</td>
                     <td>{{ $order->total_price }}</td>
                     <td>
-                        <a href="{{ url('view-order/'.$order->id) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ url('view-order/' . $order->id) }}" class="btn btn-primary">Edit</a>
                     </td>
                 </tr>
             </tbody>
