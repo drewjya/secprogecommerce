@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\FrontEndController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FrontendController as FrontendFrontendController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -30,8 +31,9 @@ Route::post('add-to-cart', [CartController::class, 'addProduct']);
 Route::middleware(['auth'])->group(function () {
     Route::get('cart', [CartController::class, 'viewcart']);
     Route::get('delete-cart/{id}', [CartController::class, 'destroy']);
-    Route::get('checkout', [CartController::class, 'confirm']);
+    Route::get('checkout', [CheckoutController::class, 'index']);
     Route::get('delall', [CartController::class, 'dellAll']);
+    Route::post('place-order', [CheckoutController::class, 'order']);
 });
 
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {

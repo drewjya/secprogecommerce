@@ -3,12 +3,12 @@
 @section('content')
     <div class="overview-boxes">
         <div class="box">
-            <div class="right-side">
+
                 <h3>Dashboard Page
 
                 </h3>
-            </div>
-            <i class="bx bx-cart-alt cart"></i>
+
+            
         </div>
     </div>
 @endsection

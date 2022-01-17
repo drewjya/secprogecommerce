@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="overview-boxes">
+
     <div class="box">
-        <div class="right-side">
-            <h5>Products Page</h5>
-        </div>
+
+            <h3>Products Page</h3>
+
     </div>
-</div>
+
 <table class="table">
     <thead>
         <tr class="head">

@@ -12,9 +12,12 @@
                 @php
                     $total = 0;
                     $itemL = 0;
+                    $status = false;
                 @endphp
                 @foreach ($cartitems as $item)
-
+@php
+    $status = false;
+@endphp
 
                     <div class="Cart-Items">
 
@@ -25,6 +28,11 @@
                         <div class="about">
                             <h1 class="title">{{ $item->product->name }}</h1>
                         </div>
+                        @if ($item->prod_qty <= $item->product->quantity)
+                        @php
+                            $status = true;
+                        @endphp
+                        <p>Available</p>
                         <div class="counter">
 
                             <div class="count">{{ $item->prod_qty }}</div>
@@ -34,10 +42,16 @@
                             <div class="amount">Rp {{ $item->prod_qty * $item->product->selling_price }}</div>
                             <a href="{{url('delete-cart/'.$item->id)}}"class="remove-button">Remove</a>
                         </div>
+                        @else
+                        <p>Not Available</p>
+                        @endif
                     </div>
                     @php
-                    $itemL++;
+                    if ($status) {
+                        # code...
+                        $itemL++;
                         $total += $item->prod_qty * $item->product->selling_price ;
+                    }
                     @endphp
                 @endforeach
                 <hr> <br>

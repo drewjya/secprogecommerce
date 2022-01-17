@@ -1,7 +1,6 @@
 <div class="sidebar">
-    <div class="logo-details">
-        <i class="bx bxl-c-plus-plus"></i>
-        <span class="logo_name">E-commerce</span>
+    <div class="sidebar-header">
+        <h2>E-Commerce</h2>
     </div>
     <ul class="nav-links">
         <li>

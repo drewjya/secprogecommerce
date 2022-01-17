@@ -1,11 +1,8 @@
-/* Googlefont Poppins CDN Link */
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .dropdown {
@@ -42,6 +39,22 @@
     background-color: whitesmoke;
 }
 
+.navbar {
+    /* position: inline; */
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    background-color: #a4003a;
+    display: flex;
+}
+
+.navbar h2 {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin: 16px;
+}
+
 .dropbtn {
     margin-top: 5px;
     background-color: whitesmoke;
@@ -50,6 +63,13 @@
     font-size: 15px;
     border: none;
     cursor: pointer;
+}
+
+.sidebar-header {
+    color: white;
+    background-color: #f50057;
+    padding: 20px;
+    text-align: center;
 }
 
 .dropbtn img {
@@ -68,11 +88,14 @@
 }
 
 .sidebar {
-    position: fixed;
+    margin: 0;
+    padding: 0;
+    background-color: #f50057;
     height: 100%;
-    width: 240px;
-    background: #0a2558;
-    transition: all 0.5s ease;
+    width: 200px;
+    padding: auto 10px;
+    position: fixed;
+    overflow: auto;
 }
 
 .sidebar.active {
@@ -103,6 +126,11 @@
     margin-top: 10px;
 }
 
+
+/* nav {
+    margin: 0;
+} */
+
 .sidebar .nav-links li {
     position: relative;
     list-style: none;
@@ -119,11 +147,13 @@
 }
 
 .sidebar .nav-links li a.active {
-    background: #081d45;
+    background-color: #a4003a;
+    color: white;
 }
 
 .sidebar .nav-links li a:hover {
-    background: #081d45;
+    background-color: #a4003a;
+    color: white;
 }
 
 .sidebar .nav-links li i {
@@ -150,8 +180,8 @@
     position: relative;
     background: #f5f5f5;
     min-height: 100vh;
-    width: calc(100% - 240px);
-    left: 240px;
+    width: calc(100% - 200px);
+    left: 200px;
     transition: all 0.5s ease;
 }
 
@@ -160,7 +190,8 @@
     left: 60px;
 }
 
-.home-section nav {
+
+/* .home-section {
     display: flex;
     justify-content: space-between;
     height: 80px;
@@ -174,7 +205,7 @@
     padding: 0 20px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     transition: all 0.5s ease;
-}
+} */
 
 .sidebar.active~.home-section nav {
     left: 60px;
@@ -261,7 +292,7 @@ nav .profile-details i {
 
 .home-section .home-content {
     position: relative;
-    padding-top: 104px;
+    padding: 20px;
 }
 
 .home-content .overview-boxes {
@@ -564,35 +595,58 @@ nav .profile-details i {
     color: #fff;
     background-color: #0d6efd;
     border-color: #0d6efd;
+    font-size: 16px;
+    padding: 5px 0px;
+    min-width: 80px;
 }
 
 .btn-danger {
     color: #fff;
     background-color: #ff3939;
     border-color: #ff3939;
+    font-size: 16px;
+    padding: 5px 0px;
+    min-width: 80px;
 }
 
 .table {
-    --bs-table-bg: transparent;
-    --bs-table-accent-bg: transparent;
-    --bs-table-striped-color: #212529;
-    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
-    --bs-table-active-color: #212529;
-    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
-    --bs-table-hover-color: #212529;
-    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    border-radius: 5px 5px 0 0;
     width: 100%;
-    margin-bottom: 1rem;
-    color: #212529;
-    vertical-align: top;
-    border-color: #dee2e6;
-    margin-left: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-td {
-    padding: 10px;
-    /* display: flex; */
+.table thead tr {
+    background-color: #ff7aa9;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table th,
+.table td {
+    padding: 12px 10px;
     text-align: center;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:hover {
+    background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 2px solid #ff7aa9;
+}
+
+.table tbody tr.active-row {
+    font-weight: bold;
+    color: #ff7aa9;
 }
 
 td img {
