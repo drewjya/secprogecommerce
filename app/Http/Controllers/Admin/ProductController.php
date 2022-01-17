@@ -23,6 +23,9 @@ class ProductController extends Controller
     public function insert(Request $request)
     {
         $product = new Product();
+        $validator = $request->validate([
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
@@ -57,6 +60,9 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $product = Product::find($id);
+        $validator = $request->validate([
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
         if ($request->hasFile('image')) {
             $path = 'asset/uploads/products/' . $product->image;
             if (File::exists($path)) {

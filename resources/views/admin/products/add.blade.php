@@ -49,6 +49,9 @@
             <label for="meta_keywords">Meta Keywords</label><br>
             <input type="text" name="meta_keywords"><br><br>
             <input type="file" name="image" id="imageIn"><br>
+            @error('image')
+                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+            @enderror
             <button type="submit">Submit</button>
         </form>
 

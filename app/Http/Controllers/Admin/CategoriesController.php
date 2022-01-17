@@ -23,6 +23,9 @@ class CategoriesController extends Controller
     public function insert(Request $request)
     {
         $category = new Category();
+        $validator = $request->validate([
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
@@ -50,6 +53,9 @@ class CategoriesController extends Controller
     public function update(Request $request, $id)
     {
         $category = Category::find($id);
+        $validator = $request->validate([
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
         if ($request->hasFile('image')) {
             $path = 'asset/uploads/categories/' . $category->image;
             if (File::exists($path)) {

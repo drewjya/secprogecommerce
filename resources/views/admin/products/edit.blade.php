@@ -27,9 +27,9 @@
             <label for="descriptions">Descriptions</label><br>
             <textarea name="descriptions" rows="5">{{ $product->descriptions }}</textarea><br>
             <label for="status">Status</label>
-            <input type="checkbox" name="status"{{ $product->status == 1 ? 'checked' : '' }}  id="status"><br>
+            <input type="checkbox" name="status" {{ $product->status == 1 ? 'checked' : '' }} id="status"><br>
             <label for="trending">Trending</label>
-            <input type="checkbox" {{ $product->trending == 1 ? 'checked' : '' }}  name="trending" id="trending">
+            <input type="checkbox" {{ $product->trending == 1 ? 'checked' : '' }} name="trending" id="trending">
             <br>
             <br>
             <label for="original_price">Original Price</label>
@@ -52,10 +52,12 @@
             <label for="meta_keywords">Meta Keywords</label><br>
             <input type="text" name="meta_keywords" value="{{ $product->meta_keywords }}"><br><br>
             @if ($product->image)
-            <img width="100px" height="100px" src="{{ asset('asset/uploads/products/' . $product->image) }}"
-            alt="">
+                <img width="100px" height="100px" src="{{ asset('asset/uploads/products/' . $product->image) }}" alt="">
             @endif
             <input type="file" name="image" id="imageIn"><br>
+            @error('image')
+                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+            @enderror
             <button type="submit">Update</button>
         </form>
 

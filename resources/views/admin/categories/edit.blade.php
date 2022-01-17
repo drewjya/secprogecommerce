@@ -30,6 +30,9 @@
                 <img width="100px" height="100px" src="{{ asset('asset/uploads/categories/' . $category->image) }}" alt="">
             @endif
             <input type="file" name="image" id="imageIn"><br>
+            @error('image')
+            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+        @enderror
             <button type="submit">Update</button>
         </form>
 
